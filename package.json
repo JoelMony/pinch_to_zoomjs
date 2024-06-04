@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/JoelMony/pinch_to_zoomjs.git"
   },
-  "author": "Joel Monyonga",
+  "author": "Joel Monyonga, Rodrigue Tusse",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JoelMony/pinch_to_zoomjs/issues"

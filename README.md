@@ -1,4 +1,7 @@
 # PinchToZoom
+
+[![Node.js CI](https://github.com/JoelMony/pinch_to_zoomjs/actions/workflows/test.yml/badge.svg)](https://github.com/JoelMony/pinch_to_zoomjs/actions/workflows/test.yml)
+
 Allows you to pinch and zoom an image inside a container for mobile devices.
 
 PinchToZoom v1.0.0
