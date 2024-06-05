@@ -1,0 +1,16 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Zoomable and Draggable Image</title><style>#image-container {
+      max-width: 500px;
+      border: 2px solid;
+      height: 300px;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      touch-action: none;
+      transition: transform .4s ease-out 0s, top .4s ease-out 0s;
+    }</style><script defer="defer" src="bundle.js"></script></head><body><div id="image-container"><img id="zoomable-image" src="./images/lion_test.jpeg" alt="Zoomable Image"></div><script>window.addEventListener("DOMContentLoaded", function(e) {
+    const imgElement = document.getElementById("zoomable-image");
+    const pinchToZoomInstance = new PinchToZoom(imgElement);
+  })</script></body></html>

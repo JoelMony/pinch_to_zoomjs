@@ -62,9 +62,7 @@ class PinchToZoom {
         this.scale = Math.min(this.maxScale, Math.max(this.minScale, this.scale));
       }
       this.distance = newDistance;
-    }
-
-    if (event.targetTouches.length == 1 && !this.isZooming) {
+    } else if (event.targetTouches.length == 1 && !this.isZooming) {
       // Handle dragging
       if (this.scale > 1) {
         const newXPosition = event.targetTouches[0].pageX;
