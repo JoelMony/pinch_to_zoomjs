@@ -100,8 +100,8 @@ describe('PinchToZoom', () => {
       pinchToZoom.touchStartHandler(event);
 
       // Assert the expected changes in xPosition, yPosition, and isZooming
-      expect(pinchToZoom.xPosition).toBe(0);
-      expect(pinchToZoom.yPosition).toBe(0);
+      expect(pinchToZoom.xPosition).toBe(100);
+      expect(pinchToZoom.yPosition).toBe(200);
       expect(pinchToZoom.isZooming).toBe(false);
     });
 
@@ -116,8 +116,8 @@ describe('PinchToZoom', () => {
       pinchToZoom.touchStartHandler(event);
 
       // Assert that xPosition, yPosition, and isZooming remain unchanged
-      expect(pinchToZoom.xPosition).toBe(100);
-      expect(pinchToZoom.yPosition).toBe(200);
+      expect(pinchToZoom.xPosition).toBe(0);
+      expect(pinchToZoom.yPosition).toBe(0);
       expect(pinchToZoom.isZooming).toBe(false);
     });
   });

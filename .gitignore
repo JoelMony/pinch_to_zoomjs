@@ -7,3 +7,6 @@ node_modules/
 # Ignore bower_components
 
 bower_components/
+
+# Ignore .DS_Store
+.DS_Store
