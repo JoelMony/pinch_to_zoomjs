@@ -1,4 +1,14 @@
+/**
+ * Pinch to zoom
+ */
+
 class PinchToZoom {
+
+  /**
+   * Constructor
+   * 
+   * @param {HTMLImageElement} img 
+   */
   constructor(img) {
     this.img = img;
     this.distance = 0;
@@ -19,6 +29,9 @@ class PinchToZoom {
     this.init();
   }
 
+  /**
+   * Initialize the pinch to zoom
+   */
   init() {
     this.img.addEventListener("touchmove", this.touchMoveHandler);
     this.img.addEventListener("touchstart", this.touchStartHandler);
@@ -29,6 +42,10 @@ class PinchToZoom {
     }, 1000 / 60);
   }
 
+  /**
+   * Touch move handler
+   * @param {*} event 
+   */
   touchMoveHandler(event) {
     if (event.targetTouches.length == 2) {
       // Handle zooming
@@ -45,7 +62,9 @@ class PinchToZoom {
         this.scale = Math.min(this.maxScale, Math.max(this.minScale, this.scale));
       }
       this.distance = newDistance;
-    } else if (event.targetTouches.length == 1 && !this.isZooming) {
+    }
+
+    if (event.targetTouches.length == 1 && !this.isZooming) {
       // Handle dragging
       if (this.scale > 1) {
         const newXPosition = event.targetTouches[0].pageX;
@@ -88,6 +107,10 @@ class PinchToZoom {
     }
   }
 
+  /**
+   * Touch start handler
+   * @param {*} event 
+   */
   touchStartHandler(event) {
     if (event.targetTouches.length == 1) {
       this.xPosition = event.targetTouches[0].pageX;
@@ -96,6 +119,11 @@ class PinchToZoom {
     }
   }
 
+  /**
+   *  Touch end handler
+   * 
+   * @param {*} event 
+   */
   touchEndHandler(event) {
     this.distance = 0;
     if (this.scale <= 1) {
@@ -105,6 +133,9 @@ class PinchToZoom {
     }
   }
 
+  /**
+   * Destroy the pinch to zoom
+   */
   destroy() {
     clearInterval(this.intervalId);
     this.img.removeEventListener("touchmove", this.touchMoveHandler);

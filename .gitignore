@@ -1,0 +1,12 @@
+# .gitignore for javascript projects
+
+# Ignore node_modules
+
+node_modules/
+
+# Ignore bower_components
+
+bower_components/
+
+# Ignore .DS_Store
+.DS_Store
